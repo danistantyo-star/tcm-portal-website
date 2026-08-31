@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trimitra Cipta Mandiri — Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;800&display=swap" rel="stylesheet">
+    <!-- Clash Display — font display premium (Fontshare) -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Popup video pembuka (logo TCM). Dimuat TANPA defer supaya lapisan
+         penutup terpasang sebelum halaman portal sempat tergambar. Popup di
+         dalam iframe web/ otomatis tidak tampil dobel karena penanda
+         sessionStorage dibagi antar halaman se-origin. -->
+    <link rel="stylesheet" href="web/aset/video-popup.css">
+    <script src="web/aset/video-popup.js"></script>
+</head>
+<body>
+
+    <!-- ============================================================
+         LOADER — ditampilkan selama frame sequence sedang di-preload
+         ============================================================ -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">TCM</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill" id="loader-bar-fill"></div>
+            </div>
+            <div class="loader-percent" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         PORTAL CONTAINER — di-pin oleh ScrollTrigger selama animasi
+         ============================================================ -->
+    <div id="portal-container">
+
+        <!-- Lapisan belakang: website TCM (iframe) -->
+        <div id="iframe-section">
+            <iframe
+                id="tcm-iframe"
+                src="web/"
+                title="Trimitra Cipta Mandiri Website"
+                loading="eager"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Lapisan depan: canvas untuk frame sequence zoom-in -->
+        <div id="hero-section">
+            <canvas id="hero-canvas"></canvas>
+
+            <!-- Headline besar di tengah -->
+            <div id="scroll-hint">
+                <h1 class="scroll-hint-text">
+                    <span class="hint-word"><em class="hint-accent">Welcome</em> to</span>
+                    <span class="hint-word hint-word-name">Trimitra Cipta Mandiri</span>
+                </h1>
+            </div>
+
+            <!-- Ajakan scroll di bagian bawah -->
+            <div id="scroll-cta">
+                <p class="scroll-hint-sub">
+                    Scroll to begin the journey
+                </p>
+                <div class="scroll-hint-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4v16m0 0l-6-6m6 6l6-6"
+                              stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- GSAP + ScrollTrigger (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

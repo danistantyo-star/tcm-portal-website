@@ -1,0 +1,239 @@
+/* ============================================================
+   Popup video pembuka (intro splash) — PT Trimitra Cipta Mandiri
+   ------------------------------------------------------------
+   Dipakai bersama aset/video-popup.js.
+   Ditampilkan sekali per sesi peramban, hanya di halaman Beranda.
+
+   Catatan porting ke WordPress:
+   berkas ini cukup di-enqueue lewat functions.php, tidak ada
+   ketergantungan pada markah halaman statis.
+   ============================================================ */
+
+:root {
+  --vp-navy: #00225C;
+  --vp-navy-d: #001640;
+  --vp-orange: #EE6A02;
+}
+
+/* --- penutup awal: dipasang <script> di <head> supaya isi halaman
+       tidak sempat berkedip sebelum lapisan video terpasang --- */
+html.tcm-vp-pre::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background:
+    radial-gradient(120% 90% at 50% 40%, rgba(18, 60, 134, .55), transparent 70%),
+    linear-gradient(160deg, var(--vp-navy-d), #000d26 60%, #00040f);
+}
+
+html.tcm-vp-lock,
+html.tcm-vp-lock body {
+  overflow: hidden !important;
+}
+
+/* --- lapisan utama --- */
+.tcm-vp {
+  position: fixed;
+  inset: 0;
+  z-index: 9995;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(120% 90% at 50% 40%, rgba(18, 60, 134, .55), transparent 70%),
+    linear-gradient(160deg, var(--vp-navy-d), #000d26 60%, #00040f);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 1;
+  transition: opacity .55s ease;
+}
+
+.tcm-vp.is-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tcm-vp:focus { outline: none; }
+
+/* sakelar pratinjau tema HUT (z-index 9999) disembunyikan selama intro */
+html.tcm-vp-lock #hut-sakelar {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+/* --- bingkai video --- */
+.tcm-vp__frame {
+  position: relative;
+  /* lebar dibatasi tiga hal sekaligus: batas atas 980px, lebar layar,
+     dan tinggi layar — supaya bingkai 16:9 tidak pernah melebihi layar
+     (penting pada ponsel yang dimiringkan) */
+  width: min(980px, 92vw, calc((100vh - 120px) * 16 / 9));
+  width: min(980px, 92vw, calc((100dvh - 120px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #EDF1F6;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .10),
+    0 30px 80px rgba(0, 0, 0, .55),
+    0 0 120px rgba(18, 60, 134, .35);
+  transform: translateY(14px) scale(.985);
+  opacity: 0;
+  animation: tcm-vp-masuk .6s cubic-bezier(.22, .8, .28, 1) forwards;
+}
+
+@keyframes tcm-vp-masuk {
+  to { transform: none; opacity: 1; }
+}
+
+/* penopang untuk peramban lama tanpa aspect-ratio */
+@supports not (aspect-ratio: 16 / 9) {
+  .tcm-vp__frame { height: 0; padding-bottom: 56.25%; }
+}
+
+.tcm-vp__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #EDF1F6;
+}
+
+/* --- bilah kemajuan 6 detik --- */
+.tcm-vp__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--vp-orange), #FFB874);
+  box-shadow: 0 0 12px rgba(238, 106, 2, .6);
+  transition: width .12s linear;
+}
+
+/* --- tombol lewati --- */
+.tcm-vp__tutup {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 16px;
+  border: 1px solid rgba(0, 34, 92, .16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .86);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: var(--vp-navy);
+  font: 700 13px/1 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: .22s;
+}
+
+.tcm-vp__tutup:hover {
+  background: var(--vp-navy);
+  border-color: var(--vp-navy);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tcm-vp__tutup:focus-visible {
+  outline: 3px solid var(--vp-orange);
+  outline-offset: 2px;
+}
+
+.tcm-vp__tutup svg {
+  width: 12px;
+  height: 12px;
+  flex: none;
+}
+
+/* --- tombol putar cadangan bila autoplay ditolak peramban --- */
+.tcm-vp__putar {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 34, 92, .18);
+  cursor: pointer;
+}
+
+.tcm-vp.is-manual .tcm-vp__putar { display: flex; }
+
+.tcm-vp__putar span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--vp-orange);
+  box-shadow: 0 12px 34px rgba(238, 106, 2, .45);
+  transition: .22s;
+}
+
+.tcm-vp__putar:hover span { transform: scale(1.06); }
+
+.tcm-vp__putar svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  fill: #fff;
+}
+
+/* --- keterangan kecil di bawah bingkai --- */
+.tcm-vp__ket {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  text-align: center;
+  color: rgba(255, 255, 255, .45);
+  font: 600 11px/1.6 "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .tcm-vp__tutup { top: 10px; right: 10px; padding: 7px 12px 7px 14px; font-size: 12px; }
+  .tcm-vp__ket { bottom: 18px; font-size: 10px; }
+}
+
+/* Pada layar tegak (ponsel) bingkai dibuat selebar layar supaya logo
+   terbaca besar; rasio 16:9 tetap dijaga agar tulisan tidak terpotong. */
+@media (max-width: 700px) and (orientation: portrait) {
+  .tcm-vp { padding: 0; }
+  .tcm-vp__frame {
+    width: min(100vw, calc((100vh - 60px) * 16 / 9));
+    width: min(100vw, calc((100dvh - 60px) * 16 / 9));
+    border-radius: 0;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 22px 60px rgba(0, 0, 0, .5);
+  }
+}
+
+@media (max-height: 460px) and (orientation: landscape) {
+  .tcm-vp { padding: 10px; }
+  .tcm-vp__frame {
+    width: min(96vw, calc((100vh - 74px) * 16 / 9));
+    width: min(96vw, calc((100dvh - 74px) * 16 / 9));
+    border-radius: 12px;
+  }
+  .tcm-vp__ket { bottom: 10px; font-size: 9px; letter-spacing: .12em; }
+}
+
+/* --- hormati preferensi kurangi-gerak --- */
+@media (prefers-reduced-motion: reduce) {
+  .tcm-vp__frame { animation: none; opacity: 1; transform: none; }
+  .tcm-vp { transition: none; }
+}

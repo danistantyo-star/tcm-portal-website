@@ -1,0 +1,59 @@
+CATATAN REVISI rev9 — POPUP VIDEO PEMBUKA
+PT Trimitra Cipta Mandiri · 27 Agustus 2026
+================================================================
+
+APA YANG BERUBAH
+- Berkas baru : aset/video-popup.css
+                aset/video-popup.js
+                aset/tcmlogo3d1080p.mp4   (video utama, H.264 1080p,
+                                           dipadatkan dari 1,1 MB ke 468 KB
+                                           tanpa penurunan mutu yang terlihat)
+                aset/tcmlogo3d720p.webm   (cadangan VP9, tidak aktif secara baku)
+                aset/tcmlogo3d-poster.jpg (gambar bingkai pertama)
+- Berkas diubah : index.html dan en/index.html
+                  (hanya 2 baris tambahan di dalam <head>)
+Halaman lain tidak disentuh sama sekali.
+
+CARA KERJA
+- Popup hanya muncul di halaman Beranda (ID dan EN).
+- Muncul otomatis saat halaman dibuka, video 6 detik tanpa suara,
+  lalu lapisan menutup sendiri dengan efek pudar.
+- Muncul sekali saja per sesi peramban. Tutup semua tab lalu buka
+  lagi -> tampil kembali.
+- Bisa dilewati: tombol "Lewati", tombol Esc, atau klik latar gelap.
+- Ada bilah kemajuan oranye di bawah bingkai sebagai penanda durasi.
+
+PENGAMAN
+- Jika peramban menolak autoplay -> muncul tombol putar manual.
+- Jika berkas video gagal dimuat -> lapisan langsung ditutup,
+  pengunjung tidak pernah terkurung di layar kosong.
+- Jika video tidak jalan dalam 3,5 detik -> lapisan ditutup sendiri.
+- Pengunjung yang memilih "kurangi gerak" di sistemnya, atau sedang
+  memakai mode hemat data, tidak akan dibebani video sama sekali.
+
+UNTUK PERAGAAN KE DIREKTUR
+Supaya popup selalu muncul setiap kali halaman dibuka (tidak hanya
+sekali per sesi), ubah baris di dalam <head> index.html menjadi:
+
+  <script src="aset/video-popup.js" data-sekali="tidak"></script>
+
+Kembalikan seperti semula sebelum go-live.
+
+CADANGAN WEBM (opsional)
+Berkas WebM ikut disertakan tetapi tidak dipasang secara baku karena
+MP4 H.264 sudah didukung Chrome, Edge, Firefox, dan Safari. Bila suatu
+saat diperlukan, aktifkan dengan:
+
+  <script src="aset/video-popup.js" data-webm="ya"></script>
+
+MENGGANTI VIDEO
+Timpa berkas aset/tcmlogo3d1080p.mp4 dengan video baru bernama sama,
+atau tunjuk berkas lain lewat atribut:
+
+  <script src="aset/video-popup.js" data-video="aset/video-baru.mp4"></script>
+
+CATATAN UNTUK PORTING KE WORDPRESS (tcm-theme)
+Kedua berkas tidak bergantung pada markah halaman statis. Cukup:
+1. salin folder aset ke dalam tema;
+2. enqueue video-popup.css dan video-popup.js di functions.php
+   dengan syarat is_front_page(), tanpa 'defer' pada skripnya.

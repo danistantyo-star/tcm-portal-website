@@ -1,0 +1,207 @@
+/* ============================================================
+   Tema HUT ke-26 PT Trimitra Cipta Mandiri  (8 November 2026)
+   ------------------------------------------------------------
+   Versi penuh: mewah dan elegan, emas menyeluruh.
+   Semua aturan berpagar body.hut — lepas kelas itu dan situs
+   kembali ke tema umum tanpa sisa.
+
+   Di WordPress: satu centangan di Penyesuai (Customizer) yang
+   menambahkan kelas "hut" lewat body_class().
+   ============================================================ */
+
+:root{
+  --hg-terang:#F3DA85;   /* emas sorot   */
+  --hg:#D4AF37;          /* emas utama   */
+  --hg-tua:#8F7318;      /* emas dalam   */
+  --hg-teks:#8A6D14;     /* emas untuk teks di latar putih (kontras aman) */
+  --hg-garis:#C9A227;    /* emas garis   */
+}
+
+/* elemen khusus HUT tersembunyi selama tema HUT mati.
+   !important disengaja: sebagian menumpang blok yang aturannya lebih kuat. */
+body:not(.hut) .hut-el{ display:none !important; }
+
+/* ---------- seleksi teks ---------- */
+body.hut ::selection{ background:var(--hg); color:#1E1600; }
+
+/* ------------------------------------------------------------
+   1. Pita pengumuman — navy dalam diapit sepasang garis emas
+   ------------------------------------------------------------ */
+body.hut .hut-pita{
+  display:block; text-align:center; padding:9px 16px; line-height:1.5;
+  background:var(--navy-d,#001640);
+  border-top:1px solid var(--hg); border-bottom:1px solid rgba(201,162,39,.55);
+  color:var(--hg-terang);
+  font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase;
+}
+body.hut .hut-pita span{
+  color:#C3B36E; font-weight:600; letter-spacing:.04em; text-transform:none;
+}
+
+/* ------------------------------------------------------------
+   2. Lambang 26 di bilah kepala
+   ------------------------------------------------------------ */
+body.hut .hut-lencana{
+  display:flex; align-items:center; margin-left:12px; flex-shrink:0;
+  filter:drop-shadow(0 2px 8px rgba(201,162,39,.45));
+}
+body.hut .hut-lencana svg{ width:46px; height:46px; display:block; }
+body.hut header.solid .hut-lencana{ filter:drop-shadow(0 1px 4px rgba(143,115,24,.3)); }
+@media(max-width:1180px){ body.hut .hut-lencana{ display:none; } }
+body.hut header.solid{ box-shadow:0 2px 18px rgba(0,34,92,.1), inset 0 -1px 0 rgba(201,162,39,.55); }
+
+/* ------------------------------------------------------------
+   3. Hero — pendar emas dan aksen keemasan
+   ------------------------------------------------------------ */
+body.hut .hero::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(880px 460px at 82% 8%, rgba(212,175,55,.30), transparent 62%),
+    radial-gradient(620px 340px at 8% 96%, rgba(212,175,55,.14), transparent 65%);
+}
+body.hut .hero .wrap{ position:relative; z-index:2; }
+body.hut .hero .badge{
+  background:linear-gradient(135deg,var(--hg-tua),var(--hg) 55%,var(--hg-terang));
+  color:#241B00; border-color:transparent;
+}
+body.hut .hero .badge b{ color:#5C4A0D; }
+body.hut .hero h1 em{ color:var(--hg-terang); }
+body.hut .btn-p{
+  background:linear-gradient(135deg,var(--hg-tua),var(--hg) 60%,var(--hg-terang));
+  color:#241B00; box-shadow:0 8px 22px rgba(184,145,46,.42);
+}
+body.hut .btn-p:hover{
+  background:linear-gradient(135deg,#7A5E10,var(--hg) 55%,var(--hg-terang));
+  transform:translateY(-2px); box-shadow:0 12px 28px rgba(184,145,46,.5);
+}
+body.hut .hero .btn-g{ border-color:rgba(243,218,133,.65); color:var(--hg-terang); }
+body.hut .lang span.on{ background:var(--hg); color:#241B00; }
+
+/* ------------------------------------------------------------
+   4. Bilah statistik — bergaris emas, angka keemasan
+   ------------------------------------------------------------ */
+body.hut .stats .grid{ border-top:3px solid var(--hg); }
+body.hut .stat b{ color:var(--hg-teks); }
+body.hut .stat b i{ color:var(--navy,#00225C); }
+body.hut .stat .hut-el{ display:block; }
+body.hut .stat .umum{ display:none; }
+
+/* ------------------------------------------------------------
+   5. Aksen emas pada judul dan sorotan di seluruh halaman
+   ------------------------------------------------------------ */
+body.hut .eyebrow{ color:var(--hg-teks); }
+body.hut h2.sec em, body.hut h2 em{ color:var(--hg-teks); }
+body.hut .dark h2 em, body.hut .dark h2.sec em,
+body.hut .cta-band h2 em{ color:var(--hg-terang); }
+body.hut .cta-band{ border:1px solid rgba(201,162,39,.4); }
+
+/* kartu: bayangan hangat keemasan saat disentuh */
+body.hut .svc:hover, body.hut .proj:hover, body.hut .doc:hover{
+  box-shadow:0 14px 34px rgba(143,115,24,.22);
+}
+
+/* ------------------------------------------------------------
+   6. Bagian perayaan di beranda — panggung utama
+   ------------------------------------------------------------ */
+body.hut .hut-band{
+  display:block; position:relative; overflow:hidden; padding:84px 0;
+  color:#DCE7F5;
+  background:
+    radial-gradient(1050px 420px at 82% -8%, rgba(212,175,55,.30), transparent 60%),
+    radial-gradient(760px 400px at -6% 108%, rgba(212,175,55,.16), transparent 62%),
+    linear-gradient(135deg,#00102F,var(--navy-d,#001640) 45%,#062A63);
+  border-top:1px solid var(--hg); border-bottom:1px solid var(--hg);
+  box-shadow:inset 0 3px 0 rgba(201,162,39,.35), inset 0 -3px 0 rgba(201,162,39,.35);
+}
+body.hut .hut-band::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:repeating-linear-gradient(115deg,
+    transparent 0 30px, rgba(243,218,133,.026) 30px 60px);
+}
+body.hut .hut-band .wrap{ position:relative; z-index:1; }
+
+body.hut .hut-grid{
+  display:grid; grid-template-columns:auto 1fr; gap:60px; align-items:center;
+}
+
+/* panggung lambang */
+body.hut .hut-lambang{ text-align:center; flex-shrink:0; }
+body.hut .hut-lambang svg{
+  width:216px; height:216px; display:block; margin:0 auto;
+  filter:drop-shadow(0 10px 34px rgba(212,175,55,.38));
+}
+body.hut .hut-lambang > span{
+  display:inline-block; margin-top:20px; padding-top:14px;
+  font-size:13px; font-weight:800; letter-spacing:.32em; text-indent:.32em;
+  text-transform:uppercase; color:var(--hg-terang);
+  border-top:1px solid rgba(201,162,39,.5);
+}
+
+body.hut .hut-isi .eyebrow{ color:var(--hg-terang); }
+body.hut .hut-isi h2{
+  font-size:34px; line-height:1.2; color:#fff; margin:8px 0 16px; letter-spacing:-.02em;
+}
+body.hut .hut-isi h2 em{ font-style:normal; color:var(--hg-terang); }
+body.hut .hut-isi p{ font-size:15.5px; line-height:1.78; color:#C5D3E6; max-width:62ch; }
+
+body.hut .hut-poin{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:28px 0 30px;
+}
+body.hut .hut-poin div{
+  background:linear-gradient(180deg,rgba(243,218,133,.09),rgba(243,218,133,.03));
+  border:1px solid rgba(201,162,39,.4); border-radius:12px; padding:16px 17px;
+}
+body.hut .hut-poin b{
+  display:block; font-size:24px; font-weight:800; letter-spacing:-.02em;
+  background:linear-gradient(160deg,var(--hg-terang),var(--hg));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+body.hut .hut-poin span{ display:block; margin-top:4px; font-size:12px; color:#9FB4CE; line-height:1.4; }
+
+body.hut .hut-tombol{
+  display:inline-flex; align-items:center; gap:9px;
+  background:linear-gradient(135deg,var(--hg-tua),var(--hg) 60%,var(--hg-terang));
+  color:#241B00; font-weight:800; font-size:14.5px;
+  padding:13px 28px; border-radius:999px; transition:.25s;
+  box-shadow:0 6px 22px rgba(212,175,55,.35);
+}
+body.hut .hut-tombol:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,175,55,.5); }
+
+@media(max-width:900px){
+  body.hut .hut-band{ padding:60px 0; }
+  body.hut .hut-grid{ grid-template-columns:1fr; gap:36px; }
+  body.hut .hut-lambang svg{ width:172px; height:172px; }
+  body.hut .hut-isi h2{ font-size:26px; }
+}
+@media(max-width:560px){
+  body.hut .hut-poin{ grid-template-columns:1fr; }
+}
+
+/* ------------------------------------------------------------
+   7. Kaki halaman — ditutup garis emas
+   ------------------------------------------------------------ */
+body.hut footer{
+  border-top:1px solid var(--hg);
+  box-shadow:inset 0 3px 0 rgba(201,162,39,.35);
+}
+body.hut footer h4{ color:var(--hg-terang); }
+body.hut footer a:hover{ color:var(--hg-terang); }
+
+/* ------------------------------------------------------------
+   8. Sakelar pratinjau — HANYA untuk masa peninjauan.
+      Tidak ikut ke WordPress; di sana diganti centangan Penyesuai.
+   ------------------------------------------------------------ */
+#hut-sakelar{
+  position:fixed; left:18px; bottom:18px; z-index:9999;
+  display:flex; align-items:center; gap:10px;
+  background:rgba(0,16,47,.95); color:#fff; border:1px solid rgba(201,162,39,.55);
+  border-radius:999px; padding:9px 16px 9px 13px; cursor:pointer;
+  font:600 12.5px/1 inherit; letter-spacing:.02em;
+  box-shadow:0 8px 26px rgba(0,22,64,.35); transition:.22s;
+}
+#hut-sakelar:hover{ transform:translateY(-2px); }
+#hut-sakelar u{ text-decoration:none; opacity:.62; font-weight:600; }
+#hut-sakelar em{ font-style:normal; font-weight:800; color:var(--hg-terang); }
+#hut-sakelar .lampu{ width:9px; height:9px; border-radius:50%; background:#5A6B85; transition:.22s; flex-shrink:0; }
+body.hut #hut-sakelar .lampu{ background:var(--hg-terang); box-shadow:0 0 0 4px rgba(212,175,55,.26); }
+@media print{ #hut-sakelar{ display:none; } }

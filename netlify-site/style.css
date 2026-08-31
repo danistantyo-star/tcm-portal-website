@@ -1,0 +1,260 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Scroll halus tetap dikontrol ScrollTrigger (scrub),
+       jadi biarkan default agar tidak konflik */
+    scroll-behavior: auto;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   LOADER (preloading frame sequence)
+   ============================================================ */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.loader-logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    padding-left: 0.35em; /* kompensasi letter-spacing agar terlihat center */
+}
+
+.loader-bar {
+    width: 220px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.loader-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    border-radius: 99px;
+    transition: width 0.2s ease-out;
+}
+
+.loader-percent {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+}
+
+/* ============================================================
+   PORTAL CONTAINER (di-pin oleh ScrollTrigger)
+   ============================================================ */
+#portal-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* ============================================================
+   IFRAME SECTION — lapisan belakang (website TCM)
+   ============================================================ */
+#iframe-section {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    /* State awal: tersembunyi & tidak interaktif.
+       GSAP yang akan menganimasikan opacity + scale,
+       dan script.js yang men-toggle pointer-events. */
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+#tcm-iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+}
+
+/* ============================================================
+   HERO SECTION — lapisan depan (canvas frame sequence)
+   ============================================================ */
+#hero-section {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    will-change: opacity;
+    /* Lapisan visual murni — jangan pernah menangkap klik,
+       agar iframe di belakangnya bisa diklik saat sudah aktif */
+    pointer-events: none;
+}
+
+#hero-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Gambar digambar manual di JS dengan mode "cover",
+       jadi canvas cukup memenuhi layar */
+}
+
+/* ============================================================
+   SCROLL HINT — headline di tengah, di depan seluruh gambar
+   ============================================================ */
+#scroll-hint {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+/* Headline — bold modern semi-transparan gaya "TOURVIA" */
+.scroll-hint-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Clash Display', 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: clamp(3rem, 8.8vw, 8.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 8px 42px rgba(0, 30, 60, 0.28);
+}
+
+.hint-word {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Nama perusahaan — baris kedua yang lebih kecil, berspasi lebar */
+.hint-word-name {
+    margin-top: 0.4em;
+    font-size: 0.3em;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    padding-left: 0.32em; /* kompensasi letter-spacing agar center */
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Aksen hijau pada kata "ENERGI" — senada dengan hero website TCM */
+.hint-accent {
+    font-style: normal;
+    color: rgba(74, 222, 128, 0.95);
+}
+
+/* Ajakan scroll di bawah */
+#scroll-cta {
+    position: absolute;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.scroll-hint-sub {
+    font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    font-size: clamp(0.72rem, 1.1vw, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    padding-left: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.8;
+
+    color: #ffffff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+
+    animation: pulse 2.6s ease-in-out infinite;
+}
+
+.scroll-hint-arrow {
+    margin-top: 14px;
+    width: 26px;
+    height: 26px;
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+    animation: bounce 2.6s ease-in-out infinite;
+}
+
+.scroll-hint-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50%      { transform: translateY(10px); opacity: 0.55; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+    .scroll-hint-sub {
+        max-width: 86vw;
+    }
+}
