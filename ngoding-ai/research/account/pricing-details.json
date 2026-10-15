@@ -1,0 +1,102 @@
+{
+  "styles": [
+    {
+      "tag": "MAIN",
+      "text": "ngodingpakeai50.4KUser24.9KPRDLog inDua aplikasi Pro, satu pembayaranP",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "16px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "0px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "14px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "H1",
+      "text": "Pilih paket kamu",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "48px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "0px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "1 Bulan",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "14px",
+      "color": "rgb(156, 163, 175)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "3 BulanHemat",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "14px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgb(10, 17, 40)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Tahunan",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "14px",
+      "color": "rgb(156, 163, 175)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pilih Starter",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "16px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgb(10, 17, 40)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pilih Pro",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "16px",
+      "color": "rgb(243, 244, 246)",
+      "bg": "rgb(10, 17, 40)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pilih Bundle",
+      "font": "\"Open Sauce Sans\", ui-sans-serif, system-ui, sans-serif",
+      "fontSize": "16px",
+      "color": "rgb(255, 255, 255)",
+      "bg": "rgb(255, 92, 32)",
+      "border": "rgb(44, 50, 70)",
+      "radius": "12px"
+    }
+  ],
+  "periods": {
+    "1 Bulan": "ngodingpakeai\n50.4K\nUser\n24.9K\nPRD\nLog in\nDua aplikasi Pro, satu pembayaran\nPilih paket kamu\n\nUpgrade untuk AI premium dan fitur lebih.\n\n1 Bulan\n3 Bulan\nHemat\nTahunan\nStarter\nRp 75k\n/bulan\n\nBuat yang mulai serius.\n\n5 PRD / bulan\nChat dengan AI mengenai planning PRD, fitur, task (100x/bln)\nDownload Markdown\nGenerate specs untuk fitur dan task\nPilih Starter\nPro\nRp 149k\n/bulan\nHarga sebelum diskon:\nRp 200k/bulan\n25% OFF\n\nUnlimited, semua akses.\n\nUnlimited PRD\nChat dengan AI mengenai planning PRD, fitur, task (unlimited)\nDownload Markdown\nChat langsung dengan Raf Dev untuk bantuan\nGenerate specs untuk fitur dan task\nPilih Pro\nPaling Worth\n+\nBundle Pro + DesainPakeAI\nRp 199k\n/bulan\nHarga sebelum diskon:\nRp 248k/bulan\n20% OFF\n\ndibanding beli kedua paket Pro terpisah untuk 30 hari\n\nDari rencana ke desain, dua aplikasi Pro dalam satu pembelian.\n\n1.000 kredit Canvas AI DesainPakeAI selama 30 hari\nNgodingPakeAI Pro selama 30 hari\nDesainPakeAI Pro selama 30 hari\nSemua fitur paket Pro NgodingPakeAI\nAktivasi DesainPakeAI dengan email Google yang sama\nPilih Bundle\nProduct by\nRaf Dev\n35.1K",
+    "Tahunan": "ngodingpakeai\n50.4K\nUser\n24.9K\nPRD\nLog in\nDua aplikasi Pro, satu pembayaran\nPilih paket kamu\n\nUpgrade untuk AI premium dan fitur lebih.\n\n1 Bulan\n3 Bulan\nHemat\nTahunan\nPro Tahunan\nRp 99k\n/bulan\nHarga sebelum diskon:\nRp 149k/bulan\n34% OFF\n\nBayar Rp\u00a01.188.000 /tahun\n\nUnlimited, semua akses.\n\nUnlimited PRD\nChat dengan AI mengenai planning PRD, fitur, task (unlimited)\nUpload gambar & dokumen referensi\nDownload Markdown\nChat langsung dengan Raf Dev untuk bantuan\nGenerate specs untuk fitur dan task\nPilih Pro Tahunan\nStarter Tahunan\nRp 49k\n/bulan\nHarga sebelum diskon:\nRp 75k/bulan\n35% OFF\n\nBayar Rp\u00a0588.000 /tahun\n\nBuat yang mulai serius.\n\n5 PRD / bulan\nChat dengan AI mengenai planning PRD, fitur, task (100x/bln)\nDownload Markdown\nGenerate specs untuk fitur dan task\nPilih Starter Tahunan\nPaling Worth\n+\nBundle Pro + DesainPakeAI\nRp 199k\n/bulan\nHarga sebelum diskon:\nRp 248k/bulan\n20% OFF\n\ndibanding beli kedua paket Pro terpisah untuk 30 hari\n\nDari rencana ke desain, dua aplikasi Pro dalam satu pembelian.\n\n1.000 kredit Canvas AI DesainPakeAI selama 30 hari\nNgodingPakeAI Pro selama 30 hari\nDesainPakeAI Pro selama 30 hari\nSemua fitur paket Pro NgodingPakeAI\nAktivasi DesainPakeAI dengan email Google yang sama\nPilih Bundle\n\nBundle NgodingPakeAI + DesainPakeAI berlaku untuk 1 bulan.\n\nProduct by\nRaf Dev\n35.1K"
+  },
+  "starterCta": {
+    "url": "https://www.ngodingpakeai.com/sign-in?redirect=%2Fpricing",
+    "body": "ngodingpakeai\n50.4K\nUser\n24.9K\nPRD\nLog in\nSign in\n\nSign in to your account to continue\n\nSign in with Google\n\nDon't have an account? Sign up\n\nProduct by\nRaf Dev\n35.1K"
+  }
+}

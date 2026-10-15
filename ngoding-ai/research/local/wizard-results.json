@@ -1,0 +1,146 @@
+{
+  "checks": [
+    {
+      "name": "Demo sign-in opens new-project flow",
+      "pass": true
+    },
+    {
+      "name": "Idea submission opens technology step",
+      "pass": true
+    },
+    {
+      "name": "Automatic mode selected by default",
+      "pass": true
+    },
+    {
+      "name": "Automatic mode has explicit local-template disclosure",
+      "pass": true
+    },
+    {
+      "name": "Custom mode persists reload",
+      "pass": true
+    },
+    {
+      "name": "All custom stack inputs persist reload",
+      "pass": true
+    },
+    {
+      "name": "Back to idea preserves original cash-advance prompt",
+      "pass": true
+    },
+    {
+      "name": "Resubmitting resumed idea preserves draft ID and custom stack",
+      "pass": true
+    },
+    {
+      "name": "Blank custom field disables Continue",
+      "pass": true
+    },
+    {
+      "name": "Auto mode hides editable fields",
+      "pass": true
+    },
+    {
+      "name": "Switching auto to custom retains previous stack",
+      "pass": true
+    },
+    {
+      "name": "Questions initially show 0/5",
+      "pass": true
+    },
+    {
+      "name": "Continue disabled with unanswered questions",
+      "pass": true
+    },
+    {
+      "name": "Text answer increments progress",
+      "pass": true
+    },
+    {
+      "name": "Single choice replaces previous selection",
+      "pass": true
+    },
+    {
+      "name": "Third question enforces maximum three choices",
+      "pass": true
+    },
+    {
+      "name": "Deselecting choice unlocks remaining options",
+      "pass": true
+    },
+    {
+      "name": "Empty custom answer does not complete question",
+      "pass": true
+    },
+    {
+      "name": "Custom answer completes question",
+      "pass": true
+    },
+    {
+      "name": "Skipped question state persists reload",
+      "pass": true
+    },
+    {
+      "name": "Skip completes final question",
+      "pass": true
+    },
+    {
+      "name": "Continue enabled after answer or skip all",
+      "pass": true
+    },
+    {
+      "name": "Resume skipped question restores unfinished guard",
+      "pass": true
+    },
+    {
+      "name": "Multiple choice supports independent selections",
+      "pass": true
+    },
+    {
+      "name": "Skip and resume preserve existing selections",
+      "pass": true
+    },
+    {
+      "name": "Question completion persists reload",
+      "pass": true
+    },
+    {
+      "name": "Custom answer persists reload",
+      "pass": true
+    },
+    {
+      "name": "Back navigation preserves custom technology",
+      "pass": true
+    },
+    {
+      "name": "Forward navigation retains question answers",
+      "pass": true
+    },
+    {
+      "name": "Step 2 width 1440 has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Step 3 width 1440 has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Step 2 width 390 has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Step 3 width 390 has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "Completed questions continue to feature map",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "draftId": "9b40b13e-805c-49dd-a02a-283a7da06180"
+}

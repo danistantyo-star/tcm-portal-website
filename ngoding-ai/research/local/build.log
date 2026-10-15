@@ -1,0 +1,14 @@
+
+> ngoding-ai-reconstruction@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 34 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.70 kB │ gzip:  0.42 kB
+dist/assets/index-CvE9JLyS.css   60.04 kB │ gzip: 11.89 kB
+dist/assets/index-Ig0yJ3cr.js   328.70 kB │ gzip: 95.80 kB
+
+✓ built in 143ms

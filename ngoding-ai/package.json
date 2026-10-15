@@ -1,0 +1,28 @@
+{
+  "name": "ngoding-ai-reconstruction",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/plans.test.mjs",
+    "test:e2e": "python3 tests/e2e.py",
+    "deploy:prepare": "npm run build && node scripts/prepare-vercel.mjs",
+    "build:offline": "npm run build && node scripts/build-offline.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}

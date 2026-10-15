@@ -1,0 +1,21 @@
+
+> ngoding-ai-reconstruction@0.1.0 test:e2e
+> python3 tests/e2e.py
+
+test_cash_advance_wizard_and_graph_persistence (__main__.AppTests.test_cash_advance_wizard_and_graph_persistence) ... ok
+test_create_edit_reload_copy_and_download (__main__.AppTests.test_create_edit_reload_copy_and_download) ... ok
+test_delete_plan_confirmation (__main__.AppTests.test_delete_plan_confirmation) ... ok
+test_demo_choice_flow (__main__.AppTests.test_demo_choice_flow) ... ok
+test_existing_project_prompt_and_import (__main__.AppTests.test_existing_project_prompt_and_import) ... ok
+test_guest_plan_gate_and_invalid_session (__main__.AppTests.test_guest_plan_gate_and_invalid_session) ... ok
+test_home_assets_and_outbound_links (__main__.AppTests.test_home_assets_and_outbound_links) ... ok
+test_invalid_import_and_corrupt_saved_plans (__main__.AppTests.test_invalid_import_and_corrupt_saved_plans) ... ok
+test_reference_and_template_dialog (__main__.AppTests.test_reference_and_template_dialog) ... ok
+test_responsive_routes (__main__.AppTests.test_responsive_routes) ... ok
+test_sign_out_and_not_found (__main__.AppTests.test_sign_out_and_not_found) ... ok
+test_theme_persists_across_reload (__main__.AppTests.test_theme_persists_across_reload) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 38.838s
+
+OK

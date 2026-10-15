@@ -1,0 +1,34 @@
+{
+  "browser": {
+    "mode": "connect",
+    "cdp_endpoint": "http://127.0.0.1:9223",
+    "target_id": "B51101B6B9CF3A2B5B4E4620C82D07A0"
+  },
+  "start_url": {
+    "url": "https://www.ngodingpakeai.com/"
+  },
+  "actions": [
+    {
+      "step_id": "homepage-ready",
+      "action": "wait_for",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "state": "visible",
+      "timeout_ms": 15000
+    }
+  ],
+  "capture": {
+    "at_end": [
+      "url",
+      "dom",
+      "accessibility",
+      "screenshot"
+    ],
+    "events": [
+      "network",
+      "page-errors"
+    ]
+  }
+}

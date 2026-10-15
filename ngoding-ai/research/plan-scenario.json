@@ -1,0 +1,47 @@
+{
+  "browser": {
+    "mode": "connect",
+    "cdp_endpoint": "http://127.0.0.1:9223",
+    "target_id": "B51101B6B9CF3A2B5B4E4620C82D07A0"
+  },
+  "start_url": {
+    "url": "https://www.ngodingpakeai.com/"
+  },
+  "actions": [
+    {
+      "step_id": "home-ready",
+      "action": "wait_for",
+      "locator": {
+        "kind": "css",
+        "selector": "main"
+      },
+      "state": "visible",
+      "timeout_ms": 15000
+    },
+    {
+      "step_id": "open-plan",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "button:has-text(\"Bikin Plan\")"
+      },
+      "timeout_ms": 15000
+    }
+  ],
+  "capture": {
+    "after_each_step": [
+      "url",
+      "dom",
+      "accessibility"
+    ],
+    "at_end": [
+      "url",
+      "dom",
+      "accessibility"
+    ],
+    "events": [
+      "network",
+      "page-errors"
+    ]
+  }
+}

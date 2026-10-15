@@ -1,0 +1,20 @@
+
+> ngoding-ai-reconstruction@0.1.0 test
+> node --test tests/plans.test.mjs
+
+✔ PRD, task, roadmap incorporate the actual idea, audience and selected features (4.426262ms)
+✔ invalid short ideas are rejected before generating documents (0.267805ms)
+✔ feature input is split, trimmed and bounded to 20 meaningful requirements (0.193852ms)
+✔ separate projects receive unique identities and generated content stays plain text (0.170317ms)
+✔ saved plan and edited document survive loading, malformed stored rows are discarded (0.957416ms)
+✔ storage failures are surfaced on save and handled on read (0.381015ms)
+✔ wizard persists technology and answers, and cash advance PRD includes receipt/PDF requirements (3.256186ms)
+✔ wizard rejects a corrupt graph draft instead of crashing the page (0.262606ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 101.109784

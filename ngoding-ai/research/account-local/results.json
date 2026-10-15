@@ -1,0 +1,275 @@
+{
+  "checks": [
+    {
+      "name": "Sign-in heading",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Switch to sign-up preserves redirect",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Switch to sign-in preserves redirect",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Google click explicitly reports unavailable integration",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Demo follows internal pricing redirect",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Demo session has explicit local identity",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Demo pricing CTA only shows payment-unavailable notice",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "3 Bulan Starter amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "3 Bulan Pro amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "3 Bulan visual card order",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1 Bulan Starter amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1 Bulan Pro amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1 Bulan visual card order",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Tahunan Starter amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Tahunan Pro amount",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Tahunan visual card order",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Annual totals match reference",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Annual Pro includes reference upload feature",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Guest pricing CTA gates to account with pricing redirect",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Reject external redirect '//evil.com'",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Reject external redirect '/\\\\evil.com'",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Reject external redirect 'https://evil.com'",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Reject external redirect '/\\n/evil.com'",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Invalid storage treated as guest {broken",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Invalid storage treated as guest null",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Invalid storage treated as guest \"value\"",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Invalid storage treated as guest 123",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /sign-in no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /sign-in theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /sign-up no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /sign-up theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /pricing no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 dark /pricing theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /sign-in no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /sign-in theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /sign-up no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /sign-up theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /pricing no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "1440 light /pricing theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /sign-in no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /sign-in theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /sign-up no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /sign-up theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /pricing no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 dark /pricing theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /sign-in no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /sign-in theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /sign-up no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /sign-up theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /pricing no overflow",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "390 light /pricing theme active",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "details": "[]"
+    },
+    {
+      "name": "Unavailable storage displays useful auth error",
+      "pass": true,
+      "details": ""
+    },
+    {
+      "name": "Unavailable storage pricing still gates safely",
+      "pass": true,
+      "details": ""
+    }
+  ],
+  "errors": []
+}
